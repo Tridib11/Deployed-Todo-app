@@ -1,4 +1,4 @@
-function Auth() {
+function ListHeader() {
     return (
         <div>
             Tridib
@@ -6,4 +6,4 @@ function Auth() {
     )
 }
 
-export default Auth
+export default ListHeader
