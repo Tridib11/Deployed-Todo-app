@@ -1,7 +1,9 @@
+import ListHeader from "./components/ListHeader.jsx";
+
 function App() {
   return (
-    <div>
-      Tridib
+    <div className="app">
+      <ListHeader/>
     </div>
   )
 }
