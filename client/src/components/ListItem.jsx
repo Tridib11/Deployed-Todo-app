@@ -1,7 +1,7 @@
-function ListItem() {
+function ListItem({task}) {
     return (
         <div>
-            Tridib
+            <p>{task.title}</p>
         </div>
     )
 }
