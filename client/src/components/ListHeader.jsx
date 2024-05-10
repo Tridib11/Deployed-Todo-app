@@ -1,7 +1,8 @@
-function ListHeader() {
+// eslint-disable-next-line react/prop-types
+function ListHeader({ listName }) {
     return (
         <div>
-            Tridib
+            {listName}
         </div>
     )
 }

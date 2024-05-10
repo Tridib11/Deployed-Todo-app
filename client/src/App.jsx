@@ -3,7 +3,7 @@ import ListHeader from "./components/ListHeader.jsx";
 function App() {
   return (
     <div className="app">
-      <ListHeader/>
+      <ListHeader listName={'🌴 Holiday tick list'}/>
     </div>
   )
 }
