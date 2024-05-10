@@ -1,7 +1,8 @@
+import CheckCircleOutlineIcon from '@material-ui/icons/CheckCircleOutline';
 function TickIcon() {
     return (
         <div>
-            Tridib
+            <CheckCircleOutlineIcon/>
         </div>
     )
 }
