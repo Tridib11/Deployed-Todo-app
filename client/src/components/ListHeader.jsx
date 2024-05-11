@@ -1,7 +1,7 @@
 import Modal from "./Modal";
 import { useState } from "react";
 // eslint-disable-next-line react/prop-types
-function ListHeader({ listName }) {
+function ListHeader({ listName ,getData}) {
   const[showModal,setShowModal]=useState(false)
   function signOut() {
     console.log("Sign out");
@@ -15,7 +15,7 @@ function ListHeader({ listName }) {
           SIGN OUT
         </button>
       </div>
-      {showModal && <Modal mode={'create'} setShowModal={setShowModal}/>}
+      {showModal && <Modal mode={'create'} setShowModal={setShowModal} getData={getData}/>}
     </div>
   );
 }
