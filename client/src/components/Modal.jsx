@@ -1,9 +1,5 @@
 function Modal() {
-    return (
-        <div>
-            Tridib
-        </div>
-    )
+  return <div>Tridib</div>;
 }
 
-export default Modal
+export default Modal;
