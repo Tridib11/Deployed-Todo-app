@@ -1,10 +1,6 @@
-import CheckCircleOutlineIcon from '@material-ui/icons/CheckCircleOutline';
+import CheckCircleOutlineIcon from "@material-ui/icons/CheckCircleOutline";
 function TickIcon() {
-    return (
-        <div>
-            <CheckCircleOutlineIcon/>
-        </div>
-    )
+  return <CheckCircleOutlineIcon className="tick" />;
 }
 
-export default TickIcon
+export default TickIcon;
