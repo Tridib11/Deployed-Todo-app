@@ -11,7 +11,14 @@ function Modal() {
   });
 
   const hanlechange = (e) => {
-    console.log("changing");
+    
+    const {name,value}=e.target
+    setData(data =>({
+      ...data,
+      [name]:value
+      }))
+
+      console.log(data)
   };
   return (
     <div className="overlay">
@@ -26,7 +33,7 @@ function Modal() {
             maxLength={30}
             placeholder="Your task goes here"
             name="title"
-            value={""}
+            value={data.title}
             onChange={hanlechange}
           />
           <br />
@@ -38,7 +45,7 @@ function Modal() {
             min="0"
             max="100"
             name="progress"
-            value={""}
+            value={data.progress}
             onChange={hanlechange}
           />
           <input className={mode} type="submit" />
