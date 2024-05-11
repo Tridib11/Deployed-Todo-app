@@ -43,7 +43,7 @@ body{
     border-radius: 10px;
     box-shadow: rgba(0,0,0,0.08) 0 0 0 1px;
     display: flex;
-    position: relative;
+   
     justify-content: space-between;
 }
 .task-title{
@@ -54,6 +54,11 @@ body{
     position: absolute;
     left: 65%;
     top: 6%;
+}
+
+.item-modal{
+    position:absolute;
+    top: 12%;
 }
 
 .edit{
