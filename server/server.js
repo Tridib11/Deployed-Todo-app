@@ -1,5 +1,6 @@
 const PORT= process.env.PORT ??  8000;
 const cors=require('cors')
+const {v4:uuidv4}=require('uuid')
 const express=require("express")
 const app=express()
 
@@ -25,7 +26,9 @@ app.get('/todos/:userEmail',async(req,res)=>{
 //Create a new Todo
 
 app.post('todos/',(req,res)=>{
-  try(){
+  const {user_email,title,progress,date}=req.body
+  const id=uuidv4()
+  try{
     pool.query(`INSERT INTO todos (id,user_email,title,progress,date) VALUES($1,$2,$3,$4,$5)`,[id,user_email,title,progress,date])
   }
   catch(err){
