@@ -9,13 +9,19 @@ function Modal({mode,setShowModal,task}) {
     date: editMode ? "" : new Date(),
   });
 
-  const postData=()={
-    try{
-      fetch()
-    }catch(err){
-      console.error(err)
+  const postData = () => {
+    try {
+      fetch('http://localhost:8000/todos/', {
+        'method': 'POST',
+        'headers': {
+          'Content-Type': 'application/json',
+        },
+        'body': JSON.stringify(data),
+      });
+    } catch (err) {
+      console.error(err);
     }
-  }
+  };
 
   const hanlechange = (e) => {
     
