@@ -1,5 +1,14 @@
+import { useState } from "react";
+
 function Modal() {
-  const mode = "edit";
+  const mode = "create";
+  const editMode = mode === "edit" ? true : false;
+  const [data, setData] = useState({
+    user_email: "",
+    title: "",
+    progress: "",
+    date: editMode ? "" : new Date(),
+  });
 
   const hanlechange = (e) => {
     console.log("changing");
@@ -21,9 +30,11 @@ function Modal() {
             onChange={hanlechange}
           />
           <br />
+          <label for="range">Drag to select your current progress</label>
           <input
             required
             type="range"
+            id="range"
             min="0"
             max="100"
             name="progress"
