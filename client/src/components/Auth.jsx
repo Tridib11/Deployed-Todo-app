@@ -1,9 +1,5 @@
 function Auth() {
-    return (
-        <div>
-            Tridib
-        </div>
-    )
+  return <div>Tridib</div>;
 }
 
-export default Auth
+export default Auth;
