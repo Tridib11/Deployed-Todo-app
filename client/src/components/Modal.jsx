@@ -3,8 +3,8 @@ import { useState } from "react";
 function Modal({ mode, setShowModal,getData, task }) {
   const editMode = mode === "edit" ? true : false;
   const [data, setData] = useState({
-    user_email: editMode ? task.user_email : "bob@test.com",
-    title: editMode ? task.progress : null,
+    user_email: editMode ? task.user_email : "tridib@mail.com",
+    title: editMode ? task.title : null,
     progress: editMode ? task.progress : 50,
     date: editMode ? "" : new Date(),
   });
@@ -29,6 +29,20 @@ function Modal({ mode, setShowModal,getData, task }) {
       console.error(err);
     }
   };
+
+  const editData=async(e)=>{
+    e.preventDefault()
+    try{
+
+    }catch(err){
+      console.error(err)
+    }
+  }
+
+
+
+
+
 
   const hanlechange = (e) => {
     const { name, value } = e.target;
