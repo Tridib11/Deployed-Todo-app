@@ -1,7 +1,12 @@
+import { useState } from "react";
 import TickIcon  from "./TickIcon.jsx";
 // import LinearProgress from '@mui/material/LinearProgress';
+import Modal from "./Modal.jsx";
+
 function ListItem({task}) {
     // let progress=40;
+
+    const[showModal,setShowModal]=useState(false)
     return (
         <li className="list-item">
             <div className="info-container">
@@ -11,9 +16,10 @@ function ListItem({task}) {
             </div>
 
             <div className="button-container">
-                <button className="edit">Edit</button>
+                <button className="edit" onClick={()=>setShowModal(true)}>Edit</button>
                 <button className="delete">Delete</button>
             </div>
+            {showModal && <Modal mode={'edit'} setShowModal={setShowModal} task={task}/>}
         </li>
     )
 }
