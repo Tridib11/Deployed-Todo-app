@@ -1,9 +1,5 @@
 function ProgressBar() {
-    return (
-        <div>
-            Tridib
-        </div>
-    )
+  return <div>Tridib</div>;
 }
 
-export default ProgressBar
+export default ProgressBar;
