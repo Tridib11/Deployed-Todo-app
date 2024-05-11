@@ -1,3 +1,5 @@
+import Modal from "./Modal";
+
 // eslint-disable-next-line react/prop-types
 function ListHeader({ listName }) {
   function signOut() {
@@ -12,6 +14,7 @@ function ListHeader({ listName }) {
           SIGN OUT
         </button>
       </div>
+      <Modal/>
     </div>
   );
 }
