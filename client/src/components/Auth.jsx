@@ -19,25 +19,44 @@ function Auth() {
       return;
     }
 
-    await fetch(`${process.env.REACT_APP_SERVER_URL}/${endpoint}`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        email,
-        password,
-      }),
-    });
+    const response = await fetch(
+      `${process.env.REACT_APP_SERVER_URL}/${endpoint}`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email,
+          password,
+        }),
+      }
+    );
+    const data = await response.json();
+    console.log(data);
   };
   return (
     <div className="auth-container">
       <div className="auth-container-box">
         <form>
           <h2>{isLogin ? "Please login" : "Please Signup"}</h2>
-          <input type="email" placeholder="email" />
-          <input type="password" placeholder="password" />
-          {!isLogin && <input type="password" placeholder="confirm-password" />}
+          <input
+            type="email"
+            placeholder="email"
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <input
+            type="password"
+            placeholder="password"
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          {!isLogin && (
+            <input
+              type="password"
+              placeholder="confirm-password"
+              onChange={(e) => setConfirmPassword(e.target.value)}
+            />
+          )}
           <input
             type="submit"
             className="create"
