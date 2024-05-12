@@ -65,11 +65,15 @@ app.delete("/todos/:id",(req,res)=>{
   const {id} = req.params;
   try {
     const deleteTodo = pool.query(`DELETE FROM todos WHERE id=$1`,[id]);
-    res.json("Todo was deleted");
+    res.json(deleteTodo);
   } catch (err) {
     console.error(err);
   }
 })
+
+
+//listing port
+
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
