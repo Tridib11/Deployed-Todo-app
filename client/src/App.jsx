@@ -5,7 +5,7 @@ import Auth from "./components/Auth.jsx";
 function App() {
   const userEmail = "tridib@mail.com";
   const [tasks, setTasks] = useState(null);
-  const authToken = true;
+  const authToken = false;
   const getData = async () => {
     try {
       const response = await fetch(
@@ -19,7 +19,9 @@ function App() {
   };
 
   useEffect(() => {
-    getData();
+    if (authToken) {
+      getData();
+    }
   }, []);
 
   console.log(tasks);
