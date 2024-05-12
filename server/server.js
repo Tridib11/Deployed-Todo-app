@@ -72,6 +72,30 @@ app.delete("/todos/:id",(req,res)=>{
 })
 
 
+//signup
+
+app.post("/signup", async (req, res) => {
+  const { email, password } = req.body;
+  try{
+    
+  }
+  catch(err){
+    console.error(err)
+  }
+})
+
+//login
+
+app.post("/login", async (req, res) => {
+  const { email, password } = req.body;
+  try{
+
+  }
+  catch(err){
+    console.error(err)
+  }
+})
+
 //listing port
 
 app.listen(PORT, () => {
