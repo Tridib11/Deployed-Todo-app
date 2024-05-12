@@ -1,10 +1,14 @@
 import Modal from "./Modal";
 import { useState } from "react";
+import { useCookies } from "react-cookie";
 // eslint-disable-next-line react/prop-types
 function ListHeader({ listName ,getData}) {
+  const [cookies,setCookie,removeCookie] = useCookies(null);
   const[showModal,setShowModal]=useState(false)
   function signOut() {
-    console.log("Sign out");
+    removeCookie('Email')
+    removeCookie('AuthToken')
+    window.location.reload()
   }
   return (
     <div className="list-header">

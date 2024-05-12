@@ -1,5 +1,4 @@
 import { useState } from "react";
-import TickIcon from "./TickIcon.jsx";
 // import LinearProgress from '@mui/material/LinearProgress';
 import Modal from "./Modal.jsx";
 // require('dotenv').config();
@@ -24,7 +23,6 @@ function ListItem({ task, getData }) {
   return (
     <li className="list-item">
       <div className="info-container">
-        <TickIcon />
         <p className="task-title">{task.title}</p>
         {/*<LinearProgress variant="determinate" value={progress} />*/}
       </div>
