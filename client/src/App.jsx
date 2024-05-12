@@ -4,10 +4,11 @@ import ListItem from "./components/ListItem.jsx";
 import Auth from "./components/Auth.jsx";
 import { useCookies } from "react-cookie";
 function App() {
-  const[cookies,setCookie,removeCookie] = useCookies(null)
-  const userEmail = cookies.Email
+  const [cookies, setCookie, removeCookie] = useCookies(null);
+  const userEmail = cookies.Email;
+  const authToken = cookies.AuthToken;
   const [tasks, setTasks] = useState(null);
-  const authToken = false;
+
   const getData = async () => {
     try {
       const response = await fetch(
