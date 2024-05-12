@@ -32,7 +32,7 @@ function Modal({ mode, setShowModal, getData, task }) {
   const editData = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch(`http://localhost:8000/todos/${task.id}`, {
+      const response = await fetch(`${process.env.REACT_APP_SERVERURL}/todos/${task.id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -75,7 +75,7 @@ function Modal({ mode, setShowModal, getData, task }) {
             onChange={hanlechange}
           />
           <br />
-          <label for="range">Drag to select your current progress</label>
+          <label htmlFor="range">Drag to select your current progress</label>
           <input
             required
             type="range"
