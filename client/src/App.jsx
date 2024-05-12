@@ -2,8 +2,10 @@ import ListHeader from "./components/ListHeader.jsx";
 import { useEffect, useState } from "react";
 import ListItem from "./components/ListItem.jsx";
 import Auth from "./components/Auth.jsx";
+import { useCookies } from "react-cookie";
 function App() {
-  const userEmail = "tridib@mail.com";
+  const[cookies,setCookie,removeCookie] = useCookies(null)
+  const userEmail = cookies.Email
   const [tasks, setTasks] = useState(null);
   const authToken = false;
   const getData = async () => {
