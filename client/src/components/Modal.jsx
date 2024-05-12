@@ -33,7 +33,12 @@ function Modal({ mode, setShowModal,getData, task }) {
   const editData=async(e)=>{
     e.preventDefault()
     try{
-        await fetch(`http://localhost:8000/todos/${task._id}`)
+        await fetch(`http://localhost:8000/todos/${task._id}`,{
+          method:"PUT",
+          headers:{
+            "Content-Type":"application/json"
+          },
+        })
     }catch(err){
       console.error(err)
     }

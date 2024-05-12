@@ -47,15 +47,17 @@ app.put("/todos/:id", async (req, res) => {
   const { id } = req.params;
   const { user_email,title, progress, date } = req.body;
   try {
-    const updateTodo = await pool.query(
-      `UPDATE todos SET title=$1,progress=$2,date=$3 WHERE id=$4`,
-      [title, progress, date, id]
+    const editTodo = await pool.query(
+      `UPDATE todos SET user_email=$1,title=$2,progress=$3,date=$4 WHERE id=$5`,
+      [user_email,title, progress, date, id]
     );
-    res.json(updateTodo);
+    res.json(editTodo);
   } catch (err) {
     console.error(err);
   }
 });
+
+
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
