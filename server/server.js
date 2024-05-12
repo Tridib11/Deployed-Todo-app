@@ -98,7 +98,10 @@ app.post("/signup", async (req, res) => {
 app.post("/login", async (req, res) => {
   const { email, password } = req.body;
   try {
-    await pool.query("SELECT * FROM users WHERE email=$1", [email]);
+    const users=await pool.query("SELECT * FROM users WHERE email=$1", [email]);
+    if(users.rows.length===0){
+      res.json({detail:"User does not exist"})
+    }
   } catch (err) {
     console.error(err);
   }
