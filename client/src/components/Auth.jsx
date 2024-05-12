@@ -1,13 +1,14 @@
 import { useState } from "react";
-
+import {useCookies} from 'react-cookie'
 function Auth() {
+  const [cookies, setCookie,removeCookie] = useCookies(null)
   const [isLogin, setIsLogin] = useState(true);
   const [email, setEmail] = useState(null);
   const [password, setPassword] = useState(null);
   const [confirmPassword, setConfirmPassword] = useState(null);
   const [error, setError] = useState(null);
 
-  console.log(email, password, confirmPassword)
+  console.log(cookies)
 
   const viewLogin = (status) => {
     setError(null);
@@ -22,7 +23,7 @@ function Auth() {
     }
 
     const response = await fetch(
-      `${process.env.REACT_APP_SERVER_URL}/${endpoint}`,
+      `${process.env.REACT_APP_SERVERURL}/${endpoint}`,
       {
         method: "POST",
         headers: {
@@ -35,7 +36,13 @@ function Auth() {
       }
     );
     const data = await response.json();
-    console.log(data);
+    if(data.detail){
+      setError(data.detail)
+    }else{
+      setCookie('Email',data.email)
+      setCookie('AuthToken',data.token)
+      window.location.reload()
+    }
   };
   return (
     <div className="auth-container">
@@ -62,7 +69,7 @@ function Auth() {
           <input
             type="submit"
             className="create"
-            onClick={() => handleSubmit(e, isLogin ? "login" : "signup")}
+            onClick={(e) => handleSubmit(e, isLogin ? "login" : "signup")}
           />
           {error && <p>{error}</p>}
         </form>
