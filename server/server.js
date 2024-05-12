@@ -1,4 +1,3 @@
-const PORT = process.env.PORT ?? 8756;
 const cors = require("cors");
 const { v4: uuidv4 } = require("uuid");
 const express = require("express");
@@ -118,6 +117,6 @@ app.post("/login", async (req, res) => {
 
 //listing port
 
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
+app.listen(5000, () => {
+  console.log(`Server is running on port 5000`);
 });
