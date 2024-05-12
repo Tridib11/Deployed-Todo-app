@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c540003b-8af4-4d49-83a5-b93aaea22a45" name="Changes" comment="Files added">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/.env" beforeDir="false" afterPath="$PROJECT_DIR$/server/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/db.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/db.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/server.js" afterDir="false" />
-    </list>
+    <list default="true" id="c540003b-8af4-4d49-83a5-b93aaea22a45" name="Changes" comment="Files added" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -88,7 +83,7 @@
       <workItem from="1715360336005" duration="5695000" />
       <workItem from="1715368991446" duration="11000" />
       <workItem from="1715369015358" duration="18118000" />
-      <workItem from="1715462126144" duration="16218000" />
+      <workItem from="1715462126144" duration="17046000" />
     </task>
     <task id="LOCAL-00001" summary="Files added">
       <option name="closed" value="true" />
