@@ -29,26 +29,25 @@ function Modal({ mode, setShowModal, getData, task }) {
     }
   };
 
-  const editData=async(e)=>{
-    e.preventDefault()
-    try{
-        const response=await fetch(`http://localhost:8000/todos/${task.id}`,{
-          method:"PUT",
-          headers:{
-            "Content-Type":"application/json"
-          },
-          body:JSON.stringify(data)
-        })
-        console.log(data)
-        if(response.status===200){
-          setShowModal(false)
-          getData()
-        }
-    }catch(err){
-      console.error(err)
+  const editData = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await fetch(`http://localhost:8000/todos/${task.id}`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+      console.log(data);
+      if (response.status === 200) {
+        setShowModal(false);
+        getData();
+      }
+    } catch (err) {
+      console.error(err);
     }
-  }
-
+  };
 
   const hanlechange = (e) => {
     const { name, value } = e.target;
@@ -87,7 +86,11 @@ function Modal({ mode, setShowModal, getData, task }) {
             value={data.progress}
             onChange={hanlechange}
           />
-          <input className={mode} type="submit" onClick={editMode ? editData:postData} />
+          <input
+            className={mode}
+            type="submit"
+            onClick={editMode ? editData : postData}
+          />
         </form>
       </div>
     </div>

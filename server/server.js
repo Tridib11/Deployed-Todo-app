@@ -44,13 +44,13 @@ app.post("/todos", async (req, res) => {
 //edit todo
 
 app.put("/todos/:id", async (req, res) => {
-  console.log("enterted")
+  console.log("enterted");
   const { id } = req.params;
-  const { user_email,title, progress, date } = req.body;
+  const { user_email, title, progress, date } = req.body;
   try {
     const editTodo = await pool.query(
       `UPDATE todos SET user_email=$1,title=$2,progress=$3,date=$4 WHERE id=$5`,
-      [user_email,title, progress, date, id]
+      [user_email, title, progress, date, id]
     );
     res.json(editTodo);
   } catch (err) {
@@ -59,6 +59,17 @@ app.put("/todos/:id", async (req, res) => {
 });
 
 
+//delete todo
+
+app.delete("/todos/:id",(req,res)=>{
+  const {id} = req.params;
+  try {
+    const deleteTodo = pool.query(`DELETE FROM todos WHERE id=$1`,[id]);
+    res.json("Todo was deleted");
+  } catch (err) {
+    console.error(err);
+  }
+})
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
