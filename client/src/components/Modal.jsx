@@ -33,7 +33,7 @@ function Modal({ mode, setShowModal,getData, task }) {
   const editData=async(e)=>{
     e.preventDefault()
     try{
-
+        await fetch(`http://localhost:8000/todos/${task._id}`)
     }catch(err){
       console.error(err)
     }
