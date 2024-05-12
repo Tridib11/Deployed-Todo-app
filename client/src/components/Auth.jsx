@@ -26,7 +26,7 @@ function Auth() {
            >Sign up</button>
           <button 
           onClick={() => viewLogin(true)}
-          style={{backgroundColor:!isLogin?'rgb(255,255,255':'rgb(188,188,188)'}}
+          style={{backgroundColor:isLogin?'rgb(255,255,255':'rgb(188,188,188)'}}
           >Login</button>
         </div>
       </div>
