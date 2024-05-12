@@ -7,6 +7,8 @@ function Auth() {
   const [confirmPassword, setConfirmPassword] = useState(null);
   const [error, setError] = useState(null);
 
+  console.log(email, password, confirmPassword)
+
   const viewLogin = (status) => {
     setError(null);
     setIsLogin(status);
