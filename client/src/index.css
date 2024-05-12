@@ -46,15 +46,6 @@ body{
    
     justify-content: space-between;
 }
-.task-title{
-    margin: 10px;
-}
-.tick{
-    padding: 10px;
-    position: absolute;
-    left: 65%;
-    top: 6%;
-}
 
 .item-modal{
     position:absolute;
@@ -220,4 +211,8 @@ input{
     font-size: 13px;
     margin: 10px;
     color: rgb(114,114,114);
+}
+
+.task-title{
+    margin-left: 15px;
 }
