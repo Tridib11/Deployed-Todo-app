@@ -44,6 +44,7 @@ app.post("/todos", async (req, res) => {
 //edit todo
 
 app.put("/todos/:id", async (req, res) => {
+  console.log("enterted")
   const { id } = req.params;
   const { user_email,title, progress, date } = req.body;
   try {
