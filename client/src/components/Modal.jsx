@@ -13,7 +13,7 @@ function Modal({ mode, setShowModal, getData, task }) {
   const postData = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch(`${process.env.REACT_APP_SERVERURL}/todos`, {
+      const response = await fetch(`https://deployed-todo-app-1.onrender.com/todos`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -33,7 +33,7 @@ function Modal({ mode, setShowModal, getData, task }) {
   const editData = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch(`${process.env.REACT_APP_SERVERURL}/todos/${task.id}`, {
+      const response = await fetch(`https://deployed-todo-app-1.onrender.com/todos/${task.id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

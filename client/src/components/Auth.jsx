@@ -24,7 +24,7 @@ function Auth() {
     }
 
     const response = await fetch(
-      `${process.env.REACT_APP_SERVERURL}/${endpoint}`,
+      `https://deployed-todo-app-1.onrender.com/${endpoint}`,
       {
         method: "POST",
         headers: {
